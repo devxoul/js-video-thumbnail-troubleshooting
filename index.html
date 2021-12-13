@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help me</title>
+  <script src="script.js"></script>
+  <style>
+    .container {
+      margin: 0 auto;
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .media-container {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+    }
+
+    #video {
+      border: 1px solid blue;
+      width: 50%;
+      aspect-ratio: 1;
+    }
+
+    #canvas {
+      border: 1px solid red;
+      width: 50%;
+      aspect-ratio: 1;
+      object-fit: contain;
+    }
+
+    button {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Video Thumbnail Generator</h1>
+    <input type="file" accept="video/*" onChange="onFileChange(event)" />
+    <div class="media-container">
+      <video
+        id="video"
+        autoPlay
+        muted
+        playsInline
+        preload="metadata"
+        loop
+      ></video>
+      <canvas id="canvas" />
+    </div>
+    <button onClick="generateThumbnail()">Generate</button>
+  </div>
+</body>
+</html>
